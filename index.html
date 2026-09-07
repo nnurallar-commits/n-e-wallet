@@ -8,7 +8,7 @@
 <div class="app">
   <header class="topbar">
     <div class="brand"><div class="logo">n&e</div><div><h2>n&e wallet</h2><p>spend smarter, together.</p></div></div>
-    <div class="actions"><button onclick="toggleDark()">☾ / ☀ tema</button><button class="primary" onclick="openModal()">+ harcama ekle</button></div>
+    <div class="actions"><span class="pill" id="syncStatus">firebase bağlanıyor…</span><button onclick="toggleDark()">☾ / ☀ tema</button><button class="primary" onclick="openModal()">+ harcama ekle</button></div>
   </header>
 
   <main class="grid">
@@ -57,5 +57,5 @@
   </form>
  </div>
 </div>
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 </body></html>
