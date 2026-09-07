@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#73876b" />
+  <title>n&e wallet</title>
+  <style>
+    :root{--bg:#f6f3ea;--card:#fffdf8;--ink:#263128;--muted:#7d857d;--accent:#73876b;--accent2:#dbe4d3;--border:#e9e3d7;--danger:#a15f5f;--shadow:0 14px 40px rgba(54,66,52,.10)}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f7f5ed,#f2efe6);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1080px;margin:auto;padding:28px 18px 80px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:16px;background:var(--accent);color:white;display:grid;place-items:center;font-family:Georgia,serif;font-size:22px;box-shadow:var(--shadow)}h1{font-family:Georgia,serif;margin:0;font-size:30px;letter-spacing:-.4px}.sub{color:var(--muted);font-size:13px;margin-top:2px}.pill{padding:9px 13px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.55);font-size:12px;color:var(--muted)}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-bottom:16px}.card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:22px;box-shadow:var(--shadow)}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}.big{font-size:38px;font-weight:700;margin:7px 0 3px}.muted{color:var(--muted)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tabs button,.btn{border:0;border-radius:14px;padding:11px 14px;background:#ece8de;color:var(--ink);cursor:pointer;font-weight:650}.tabs button.active,.btn.primary{background:var(--accent);color:white}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.person-head{display:flex;justify-content:space-between;align-items:center}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--accent2);font-weight:800}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.metric{padding:13px;border-radius:17px;background:#f6f3eb;border:1px solid var(--border)}.metric b{display:block;margin-top:5px}.section-title{display:flex;align-items:end;justify-content:space-between;margin:26px 0 12px}.section-title h2{margin:0;font-family:Georgia,serif;font-size:22px}.list{display:grid;gap:10px}.item{display:grid;grid-template-columns:1fr auto;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:18px}.item strong{display:block}.item small{color:var(--muted)}.amount{font-weight:750}.empty{text-align:center;padding:30px;color:var(--muted)}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.modal{position:fixed;inset:0;background:rgba(25,30,24,.35);display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-box{width:min(520px,100%);background:var(--card);border-radius:24px;padding:22px;border:1px solid var(--border);box-shadow:var(--shadow)}label{display:block;font-size:12px;color:var(--muted);margin:13px 0 5px}input,select{width:100%;padding:12px 13px;border-radius:14px;border:1px solid var(--border);background:#fff;color:var(--ink)}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}@media(max-width:760px){.hero,.grid2{grid-template-columns:1fr}.top{align-items:flex-start}.pill{display:none}.metrics{grid-template-columns:1fr 1fr 1fr}.big{font-size:32px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><div class="logo">n&e</div><div><h1>n&e wallet</h1><div class="sub">para, borç ve harcamalar tek yerde</div></div></div>
+    <div class="pill">GitHub backup shell · private data excluded</div>
+  </div>
+
+  <section class="hero">
+    <div class="card"><div class="eyebrow">birlikte</div><div class="big" id="together">₺0,00</div><div class="muted">para + yatırımlar − kalan borçlar</div><div class="tabs"><button class="active">birlikte harcama</button><button>param</button><button>borcum</button><button>yatırım</button></div></div>
+    <div class="card"><div class="eyebrow">yedek modu</div><h3>veri tarayıcıda kalır</h3><p class="muted">Bu GitHub sürümü gerçek banka ve borç verilerini repoya yazmaz. Eklediğin kayıtlar yalnızca bu tarayıcıda saklanır.</p><button class="btn primary" onclick="openModal()">harcama ekle</button></div>
+  </section>
+
+  <section class="grid2">
+    <article class="card person" data-person="Nisu"><div class="person-head"><div style="display:flex;gap:10px;align-items:center"><div class="avatar">N</div><div><strong>Nisu</strong><div class="muted" style="font-size:12px">kişisel görünüm</div></div></div></div><div class="big person-net">₺0,00</div><div class="metrics"><div class="metric"><span class="muted">para</span><b class="money">₺0</b></div><div class="metric"><span class="muted">yatırım</span><b class="investment">₺0</b></div><div class="metric"><span class="muted">borç</span><b class="debt">₺0</b></div></div></article>
+    <article class="card person" data-person="Erol"><div class="person-head"><div style="display:flex;gap:10px;align-items:center"><div class="avatar">E</div><div><strong>Erol</strong><div class="muted" style="font-size:12px">kişisel görünüm</div></div></div></div><div class="big person-net">₺0,00</div><div class="metrics"><div class="metric"><span class="muted">para</span><b class="money">₺0</b></div><div class="metric"><span class="muted">yatırım</span><b class="investment">₺0</b></div><div class="metric"><span class="muted">borç</span><b class="debt">₺0</b></div></div></article>
+  </section>
+
+  <div class="section-title"><div><div class="eyebrow">son hareketler</div><h2>bu aralar ne aldık?</h2></div><div class="toolbar"><button class="btn" onclick="exportData()">yedek dışa aktar</button><button class="btn" onclick="openModal()">+ ekle</button></div></div>
+  <div class="list" id="transactions"></div>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><h3 style="margin-top:0">harcama ekle</h3><label>kişi</label><select id="who"><option>Nisu</option><option>Erol</option></select><label>açıklama</label><input id="desc" placeholder="ör. market"/><label>kategori</label><select id="cat"><option>market</option><option>yemek/kafe</option><option>giyim</option><option>kozmetik</option><option>ulaşım</option><option>diğer</option></select><label>tutar</label><input id="amount" inputmode="decimal" placeholder="0,00"/><div class="actions"><button class="btn" onclick="closeModal()">vazgeç</button><button class="btn primary" onclick="saveExpense()">kaydet</button></div></div></div>
+<script>
+const KEY='neWalletBackupDataV1';
+const fmt=n=>new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY'}).format(Number(n)||0);
+const initial={people:{Nisu:{money:0,investment:0,debt:0},Erol:{money:0,investment:0,debt:0}},transactions:[]};
+let data=load();
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||structuredClone(initial)}catch{return structuredClone(initial)}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function render(){
+  let total=0;
+  document.querySelectorAll('.person').forEach(el=>{const p=data.people[el.dataset.person]||{money:0,investment:0,debt:0};const net=p.money+p.investment-p.debt;total+=net;el.querySelector('.person-net').textContent=fmt(net);el.querySelector('.money').textContent=fmt(p.money);el.querySelector('.investment').textContent=fmt(p.investment);el.querySelector('.debt').textContent=fmt(p.debt)});
+  document.getElementById('together').textContent=fmt(total);
+  const list=document.getElementById('transactions');
+  if(!data.transactions.length){list.innerHTML='<div class="card empty">henüz hareket yok. bu GitHub yedeği kişisel finans verilerini bilerek boş başlatır.</div>';return}
+  list.innerHTML=data.transactions.slice().reverse().map(t=>`<div class="item"><div><strong>${escapeHtml(t.description)}</strong><small>${escapeHtml(t.person)} · ${escapeHtml(t.category)} · ${new Date(t.date).toLocaleDateString('tr-TR')}</small></div><div class="amount">− ${fmt(t.amount)}</div></div>`).join('');
+}
+function openModal(){document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function saveExpense(){const person=document.getElementById('who').value;const description=document.getElementById('desc').value.trim();const category=document.getElementById('cat').value;const amount=Number(document.getElementById('amount').value.replace('.','').replace(',','.'));if(!description||!Number.isFinite(amount)||amount<=0)return alert('açıklama ve geçerli tutar gir');data.transactions.push({id:crypto.randomUUID(),person,description,category,amount,date:new Date().toISOString()});closeModal();document.getElementById('desc').value='';document.getElementById('amount').value='';persist()}
+function exportData(){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ne-wallet-local-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+render();
+</script>
+</body>
+</html>
