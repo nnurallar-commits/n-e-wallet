@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "n&e wallet",
+    "version": "github-backup-2026-09-07"
+  },
+  "users": [
+    {
+      "id": "nisu",
+      "name": "Nisu",
+      "email": "nnurallar@gmail.com",
+      "initial": "N"
+    },
+    {
+      "id": "erol",
+      "name": "Erol",
+      "email": "erollb46@gmail.com",
+      "initial": "E"
+    }
+  ],
+  "balances": {
+    "nisu": {
+      "cash": 6468.93,
+      "investment": 0,
+      "debt": 38721.41
+    },
+    "erol": {
+      "cash": 0,
+      "investment": 0,
+      "debt": 31611.85
+    }
+  },
+  "accounts": [
+    {
+      "id": "yk",
+      "owner": "nisu",
+      "name": "Yapı Kredi",
+      "balance": 5677.12
+    },
+    {
+      "id": "is",
+      "owner": "nisu",
+      "name": "İş Bankası",
+      "balance": 791.81
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "owner": "nisu",
+      "merchant": "GRATİS MNS MEYDAN MANİSA TR",
+      "account": "Yapı Kredi",
+      "category": "kozmetik",
+      "date": "2026-08-23",
+      "amount": 1010.5
+    },
+    {
+      "id": 2,
+      "owner": "nisu",
+      "merchant": "PULL BEAR FORUM IZMIR TR",
+      "account": "Yapı Kredi",
+      "category": "giyim",
+      "date": "2026-08-23",
+      "amount": 561.66
+    },
+    {
+      "id": 3,
+      "owner": "nisu",
+      "merchant": "ZARA FORUM BORNOVA IZMIR TR",
+      "account": "Yapı Kredi",
+      "category": "giyim",
+      "date": "2026-08-23",
+      "amount": 726.66
+    },
+    {
+      "id": 4,
+      "owner": "nisu",
+      "merchant": "DOGAN MARKET MANISA TR",
+      "account": "Yapı Kredi",
+      "category": "market",
+      "date": "2026-08-21",
+      "amount": 133.0
+    },
+    {
+      "id": 5,
+      "owner": "nisu",
+      "merchant": "SOFRA YEMEK URETIM VE H MANISA TR",
+      "account": "Yapı Kredi",
+      "category": "yemek/kafe",
+      "date": "2026-08-21",
+      "amount": 68.7
+    },
+    {
+      "id": 6,
+      "owner": "nisu",
+      "merchant": "SOFRA YEMEK URETIM VE H MANISA TR",
+      "account": "Yapı Kredi",
+      "category": "yemek/kafe",
+      "date": "2026-08-21",
+      "amount": 206.1
+    }
+  ],
+  "categoryEmoji": {
+    "yemek/kafe": "🍝",
+    "market": "🛒",
+    "giyim": "👗",
+    "kozmetik": "🧴",
+    "ulaşım": "🚕",
+    "fatura": "🧾",
+    "eğlence": "🎬",
+    "sağlık": "💊",
+    "eğitim": "📚",
+    "ev": "🏠",
+    "teknoloji": "💻",
+    "diğer": "✨"
+  },
+  "pastels": [
+    "#DCE8D5",
+    "#E7DFC9",
+    "#D8E5E5",
+    "#E8D9E1",
+    "#F1D9C8",
+    "#D9DDF0",
+    "#E7E2C3",
+    "#D2E2D4",
+    "#E5D6CC",
+    "#D4E0EA",
+    "#E2D8EA",
+    "#F0E3D2"
+  ]
+}
