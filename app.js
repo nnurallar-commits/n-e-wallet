@@ -78,7 +78,7 @@ function render(){
  if(!state) return;
  const n=state.balances.nisu,e=state.balances.erol;
  byId('combined').textContent=money(net(n)+net(e));
- byId('nisuNet').textContent=money(net(n)); byId('erolNet').textContent=money(net(e));
+ byId('nisuNet').textContent=money(net(n)); byId('nisuNetCard').textContent=money(net(n)); byId('erolNet').textContent=money(net(e));
  ['nisu','erol'].forEach(id=>{
    const b=state.balances[id];
    byId(id+'Cash').textContent=money(b.cash);
@@ -91,7 +91,7 @@ function renderAccounts(){
  const box=byId('accounts');box.innerHTML='';
  (state.accounts||[]).forEach(a=>{
   const d=document.createElement('div');d.className='account';
-  d.innerHTML=`<span>${a.name}</span><b>${money(a.balance)}</b>`;
+  d.innerHTML=`<span>${a.name.toLowerCase()}</span><b>${money(a.balance)}</b><div class="account-actions">${a.name.toLowerCase()} &nbsp; düzenle &nbsp; sil</div>`;
   box.appendChild(d);
  });
 }
