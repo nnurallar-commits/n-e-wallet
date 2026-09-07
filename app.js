@@ -73,7 +73,7 @@ function applyPrefs(){
  document.documentElement.style.setProperty('--accent',c);
 }
 function toggleDark(){localStorage.setItem('ne-dark',document.body.classList.contains('dark')?'0':'1');applyPrefs()}
-function setAccent(c){localStorage.setItem('ne-accent',c);applyPrefs();renderPalette()}
+function setAccent(c){localStorage.setItem('ne-accent',c);applyPrefs()}
 function render(){
  if(!state) return;
  const n=state.balances.nisu,e=state.balances.erol;
@@ -85,7 +85,7 @@ function render(){
    byId(id+'Inv').textContent=money(b.investment);
    byId(id+'Debt').textContent=money(b.debt);
  });
- renderAccounts();renderTx();renderChart();renderPalette();
+ renderAccounts();renderTx();
 }
 function renderAccounts(){
  const box=byId('accounts');box.innerHTML='';
