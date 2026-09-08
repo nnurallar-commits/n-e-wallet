@@ -1,136 +1,100 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>n&e wallet</title>
-  <meta name="description" content="Nisu ve Erol'un ortak para, harcama, borç ve yatırım takibi.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="antialiased">
-<main class="wallet-shell">
-  <header class="wallet-header">
-    <div class="brand">
-      <span class="brand-mark">n&e</span>
-      <span>wallet.</span>
-    </div>
-    <div class="person-switch" aria-label="İşlemi yapan kişi">
-      <button class="active"><span class="person-dot lime">N</span>Nisu</button>
-      <button><span class="person-dot coral">E</span>Erol</button>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="n&e wallet">
+      <span class="brand-mark">n&e</span><span class="brand-word">wallet.</span>
+    </a>
+    <div class="user-switch">
+      <button class="user active"><span class="user-dot nisu">N</span><b>Nisu</b></button>
+      <button class="user"><span class="user-dot erol">E</span><span>Erol</span></button>
     </div>
   </header>
 
-  <section class="hero-balance">
-    <div>
-      <p>Nisu’nun net durumu</p>
-      <h1 id="heroNet">—</h1>
-      <span>para + yatırımlar − kalan borçlar</span>
-      <small class="shared-total-note">ikimizin toplamı: <b id="sharedTotal">—</b></small>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hero-title">Nisu’nun net durumu</div>
+      <div id="nisuNet" class="hero-value">₺0</div>
+      <div class="hero-caption">para + yatırımlar − kalan borçlar</div>
+      <div class="hero-total">ikimizin toplamı: <b id="combined">₺0</b></div>
     </div>
-    <div class="hero-orbit">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/>
-        <path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/>
-      </svg>
-      <small>birlikte</small>
-    </div>
-    <div class="hero-ring"></div>
+    <div class="together-badge"><span>✣</span><em>birlikte</em></div>
+    <div class="hero-ring" aria-hidden="true"></div>
   </section>
 
-  <div class="quick-actions">
-    <button class="active" data-action="harcama">
-      <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></svg><span>harcama</span>
-    </button>
-    <button data-action="param">
-      <svg viewBox="0 0 24 24"><path d="M3 11h3.75a2 2 0 0 1 1.6.8l.45.6a4 4 0 0 0 6.4 0l.45-.6a2 2 0 0 1 1.6-.8H21"/><path d="M3 7h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>param</span>
-    </button>
-    <button data-action="borcum">
-      <svg viewBox="0 0 24 24"><path d="M13 16H8"/><path d="M14 8H8"/><path d="M16 12H8"/><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"/></svg><span>borcum</span>
-    </button>
-    <button data-action="yatirim">
-      <svg viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg><span>yatırım</span>
-    </button>
-  </div>
+  <nav class="primary-actions" aria-label="ana işlemler">
+    <button class="action-card active"><span class="action-icon">＋</span><b>harcama</b></button>
+    <button class="action-card"><span class="action-icon">▱</span><b>param</b></button>
+    <button class="action-card"><span class="action-icon">▤</span><b>borcum</b></button>
+    <button class="action-card"><span class="action-icon">↗</span><b>yatırım</b></button>
+  </nav>
 
-  <div class="wallet-tabs">
-    <div class="wallet-tab-list">
-      <button class="active" data-tab="durum">durum</button>
-      <button data-tab="harcamalar">harcamalar</button>
-      <button data-tab="borclar">borçlar</button>
-      <button data-tab="yatirimlar">yatırımlar</button>
-    </div>
+  <nav class="subtabs">
+    <button class="active">durum</button><button>harcamalar</button><button>borçlar</button><button>yatırımlar</button>
+  </nav>
 
-    <div class="tab-body active" data-panel="durum">
-      <section class="people-grid">
-        <article class="person-card lime">
-          <div class="person-card-top">
-            <span class="person-dot lime">N</span>
-            <h2>Nisu</h2>
-            <button class="round-icon" onclick="editDebt('nisu')" aria-label="Nisu para yeri ekle">
-              <svg viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-            </button>
-          </div>
-          <strong class="person-net" id="nisuNet">₺0</strong>
-          <span class="net-label">net durum</span>
-          <div class="mini-stats">
-            <div><span>para</span><b id="nisuCash">₺0</b></div>
-            <div><span>yatırım</span><b id="nisuInv">₺0</b></div>
-            <div><span>borç</span><b class="negative" id="nisuDebt">₺0</b></div>
-            <div><span>bu ay</span><b>₺0</b></div>
-          </div>
-          <div class="account-list" id="nisuAccounts"></div>
-        </article>
-
-        <article class="person-card coral">
-          <div class="person-card-top">
-            <span class="person-dot coral">E</span>
-            <h2>Erol</h2>
-            <button class="round-icon" onclick="editDebt('erol')" aria-label="Erol para yeri ekle">
-              <svg viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-            </button>
-          </div>
-          <strong class="person-net" id="erolNet">₺0</strong>
-          <span class="net-label">net durum</span>
-          <div class="mini-stats">
-            <div><span>para</span><b id="erolCash">₺0</b></div>
-            <div><span>yatırım</span><b id="erolInv">₺0</b></div>
-            <div><span>borç</span><b class="negative" id="erolDebt">₺0</b></div>
-            <div><span>bu ay</span><b>₺0</b></div>
-          </div>
-          <div class="account-list" id="erolAccounts"></div>
-        </article>
-      </section>
-
-      <section class="section-block">
-        <div class="section-title">
-          <div><p>son hareketler</p><h2>bu aralar ne aldık?</h2></div>
-          <svg viewBox="0 0 24 24"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
+  <main>
+    <section class="person-grid">
+      <article class="person-card nisu-card">
+        <div class="person-head">
+          <div class="person-name"><span class="user-dot nisu">N</span><span>Nisu</span></div>
+          <button class="edit-btn" onclick="editDebt('nisu')" aria-label="Nisu borcunu düzenle">⌕</button>
         </div>
-        <div class="records" id="transactions"></div>
-      </section>
-    </div>
+        <div id="nisuNetCard" class="person-net">₺0</div>
+        <div class="net-label">net durum</div>
+        <div class="stat-grid">
+          <div><span>para</span><b id="nisuCash">₺0</b></div>
+          <div><span>yatırım</span><b id="nisuInv">₺0</b></div>
+          <div><span>borç</span><b id="nisuDebt">₺0</b></div>
+          <div><span>bu ay</span><b>₺0</b></div>
+        </div>
+        <div id="accounts" class="account-list"></div>
+      </article>
 
-    <div class="tab-body" data-panel="harcamalar"><section class="section-block"><div class="section-title"><div><p>harcamalar</p><h2>tüm hareketler</h2></div></div><div class="records" id="allTransactions"></div></section></div>
-    <div class="tab-body" data-panel="borclar"><section class="section-block"><div class="section-title"><div><p>borçlar</p><h2>kişisel borçlar</h2></div></div><div class="debt-grid"><div><span>Nisu</span><b id="nisuDebtLarge"></b></div><div><span>Erol</span><b id="erolDebtLarge"></b></div></div></section></div>
-    <div class="tab-body" data-panel="yatirimlar"><section class="section-block"><div class="section-title"><div><p>yatırımlar</p><h2>yatırım özeti</h2></div></div><div class="debt-grid"><div><span>Nisu</span><b id="nisuInvLarge"></b></div><div><span>Erol</span><b id="erolInvLarge"></b></div></div></section></div>
-  </div>
-</main>
+      <article class="person-card erol-card">
+        <div class="person-head">
+          <div class="person-name"><span class="user-dot erol">E</span><span>Erol</span></div>
+          <button class="edit-btn" onclick="editDebt('erol')" aria-label="Erol borcunu düzenle">⌕</button>
+        </div>
+        <div id="erolNet" class="person-net">₺0</div>
+        <div class="net-label">net durum</div>
+        <div class="stat-grid">
+          <div><span>para</span><b id="erolCash">₺0</b></div>
+          <div><span>yatırım</span><b id="erolInv">₺0</b></div>
+          <div><span>borç</span><b id="erolDebt">₺0</b></div>
+          <div><span>bu ay</span><b>₺0</b></div>
+        </div>
+      </article>
+    </section>
 
-<div class="modal" id="expenseModal">
+    <section class="moves-card">
+      <div class="moves-head"><div><small>SON HAREKETLER</small><h2>bu aralar ne aldık?</h2></div><button class="add-btn" onclick="openModal()">+ ekle</button></div>
+      <div id="transactions"></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <div class="modal-head"><h3>harcama ekle</h3><button onclick="closeModal()">✕</button></div>
-    <form onsubmit="addExpense(event)">
+    <form class="form" onsubmit="addTx(event)">
       <select name="owner"><option value="nisu">Nisu</option><option value="erol">Erol</option></select>
-      <input name="merchant" placeholder="işletme / açıklama" required>
-      <input name="amount" type="number" step="0.01" placeholder="tutar" required>
+      <input name="merchant" placeholder="işletme / açıklama" required />
+      <input name="amount" type="number" step="0.01" placeholder="tutar" required />
       <select name="category"><option>yemek/kafe</option><option>market</option><option>giyim</option><option>kozmetik</option><option>ulaşım</option><option>fatura</option><option>eğlence</option><option>sağlık</option><option>eğitim</option><option>ev</option><option>teknoloji</option><option>diğer</option></select>
-      <input name="account" value="Yapı Kredi" placeholder="hesap">
-      <input name="date" type="date" required>
+      <input name="account" placeholder="hesap / kart" value="Yapı Kredi" />
+      <input name="date" type="date" required />
       <button class="save-btn">kaydet</button>
     </form>
   </div>
 </div>
-
 <script type="module" src="app.js"></script>
 </body>
 </html>
